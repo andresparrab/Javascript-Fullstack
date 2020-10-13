@@ -13,7 +13,8 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/arrays02.js",
+            "program": "${file}",
+            // "program": "${workspaceFolder}/caseSwitch.js",
             "linux": {
                 "runtimeExecutable": "/home/doctor/.nvm/versions/node/v14.13.1/bin/node"
             }
