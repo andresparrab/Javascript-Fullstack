@@ -1,0 +1,163 @@
+
+/*Master body styles*/
+body 
+{
+    font-family: "Lato", sans-serif;
+    margin: 0px;
+}
+
+/*Rule of thumb, have the layouts in grid and small things like navbars in flex box*/
+/*CSS GRID useful to align items*/
+
+.container
+{
+    display: grid;
+    grid-template-columns: 1rf; /*It will make columns från end to end 1fr=1 fraction=100%*/
+}
+
+
+
+/*DIVS STYLES*/
+.nav-wrapper
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 38px;
+}
+
+.left-side
+{
+    display: flex;
+}
+
+.nav-wrapper > .left-side > div
+{
+    margin-right: 20px;         /* place the right margin of the text to 20 px */
+    font-size: 0.9em;           /* make the font size 90 % */
+    text-transform: uppercase;  /* Transform all to uppercase */
+}
+
+.nav-link-wrapper
+{
+    height: 22px;
+    border-bottom: 1px solid transparent;  /* Add a line under the text */
+    transition: border-bottom 0.5s;           /* Add transition animation, fade */
+}
+
+.nav-link-wrapper a                 /* "a" is to take the first "a" to do something i this case a href*/
+{
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover  /*hover proprieties for the div*/
+{
+    border-bottom: 1px solid black;  /* Add a black line under the text when hover */
+}
+
+.nav-link-wrapper a:hover /* Hover porpeties for the link "a" is to take the first "a" to do something i this case a href*/
+{
+   color:  turquoise;  /* Change the text color to black when hover */
+}
+
+.active-nav-link
+{
+    border-bottom: 1px solid black;
+}
+.active-nav-link a
+{
+    color: black !important;
+}
+/*BUILDING THE PORTFOLIO STYLES*/
+
+.portfolio-items-wrapper
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.portfolio-item-wrapper
+{
+    position: relative;
+}
+
+
+.portfolio-img-background
+{
+    height: 350px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Adjusting the text so it is on top of the image*/
+.image-text-wrapper
+{
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; /*Aligh left to right*/
+    align-items: center;    /*Aligh top to bottom*/
+    height: 100%;
+    text-align: center;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.logo-wrapper img
+{
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+
+.subtitle
+{
+   font-weight: 600;
+    opacity: 0;
+    color: teal;
+    transition: color 0.7s;
+    transition: opacity 0.7s
+}
+
+.subtitle:hover
+{
+    opacity: 100%;
+    /*color: teal;*/
+}
+
+/*We want the backgroun imga to darken, we will use this with help of javascript*/
+.img-darken
+{
+    transition: 1s;
+    filter: brightness(10%);
+}
+
+/* About Style */
+.two-column-wrapper
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.profile-image-wrapper img
+{
+    /*height: 800px;*/
+    width: 100%;
+}
+
+.profile-content-wrapper
+{
+    padding: 30px;
+
+}
+
+.profile-content-wrapper h1
+{
+    color: teal;
+    
+}
