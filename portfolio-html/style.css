@@ -25,6 +25,11 @@ body
     padding: 38px;
 }
 
+@media only screen and (max-width: 600px) {
+    .nav-wrapper {background: lightgray;}
+  }
+
+
 .left-side
 {
     display: flex;
