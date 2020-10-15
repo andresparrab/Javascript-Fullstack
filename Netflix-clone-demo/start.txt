@@ -1,0 +1,49 @@
+1.
+    log in to tmdb and get development api 
+    API v3 9b6e44f309fcc1e52cfceea2fedbbc4e
+
+    Example API request : 9b6e44f309fcc1e52cfceea2fedbbc4e
+
+2. Create React app:
+    npx create-react-app netflix-clone
+
+3.  Setup firebase
+    go to firebase.google.com
+    create new project netflix-clone
+    install firebase-cli
+        npm install -g firebase-tools
+    then next to everything else
+    then go to firebase settings/development/hosting/get started/next/next until you see the domain
+
+4. go into the netflix-clone map
+    cd netflix-clone
+    start the react app with 
+    npm star
+5.
+    Remove the test files from the SCR folder: App.test, lovo.svg, setupTest.js
+    Edit the App.js and remove the header <header>...</header>
+    you will only have : 
+            <div className="App"> ... </div>
+    You can write inside the div : <h1>Hej Parra lets build react app netflix clone</h1>
+    and save..look at the website http://localhost:3000/
+
+6.  Make a requests.js file that have the API key for themoviedb
+
+7.  make an axios.js file that will send requests to themoviedb.com
+
+8. Rows.js will import axios.js for later use it in the async function fetchData() call 
+
+9. Make Rows.js 
+
+10. Make Trending Originals tiles bigger
+11. Make the othrer rows show thumbnails
+
+12. add var isLargeRow to the function like so :    Row({ title, fetchUrl, isLargeRow })
+13. Make the concatinated class                     className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+
+14. in the {movies.map((movie) item replace the src= {
+              isLargeRow ? movie.poster_path : movie.backdrop_path
+            }
+    this will make posters for the isLargeRow and get the backdrops images if not isLargeRow
+
+15. Create the banner
