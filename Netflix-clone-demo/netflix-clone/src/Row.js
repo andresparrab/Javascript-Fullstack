@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "./axios";
 import "./Row.css";
-
+import YouTube from "react-youtube";
+import movieTrailer from "movie-trailer";
 const base_url = "https://image.tmdb.org/t/p/original/";
 
 function Row({ title, fetchUrl, isLargeRow }) {
   const [movies, setMovies] = useState([]);
+  const [trailerUrl, setTrailerUrl] = useState("");
 
   // A snippet of code that runs on a specific condition
   useEffect(() => {
@@ -22,6 +24,27 @@ function Row({ title, fetchUrl, isLargeRow }) {
     fetchData();
   }, [fetchUrl]); //you have to always include the variable here if you want Useeffect to use it, if it comes outside the block. (function Row({ title, fetchUrl })
 
+  const opts = {
+    height: "390",
+    width: "100%",
+    playerVars: {
+      autoplay: 1,
+    },
+  };
+
+  const handleClick = (movie) => {
+    if (trailerUrl) {
+      setTrailerUrl("");
+    } else {
+      movieTrailer(movie?.name || "")
+        .then((url) => {
+          const urlParams = new URLSearchParams(new URL(url).search);
+          setTrailerUrl(urlParams.get("v"));
+        })
+        .catch((error) => console.log(error));
+    }
+  };
+
   console.log(movies);
   return (
     <div className="row">
@@ -32,7 +55,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
         {movies.map((movie) => (
           <img
             key={movie.id} //optimise to only refresh the unique poster, not the entire row
-            //AMAZIN WAY TO DO
+            onClick={() => handleClick(movie)} //AMAZIN WAY TO DO
             // normaly className=row__poster but the line below is a string contatination {``} says that we make a row__poster
             // BUT if it isLargeRow make another className "row__posterLarge"
             className={`row__poster ${isLargeRow && "row__posterLarge"}`}
@@ -43,6 +66,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
           />
         ))}
       </div>
+      {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
     </div>
   );
 }

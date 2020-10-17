@@ -6,3 +6,9 @@
   background-color: #111;
   color: white;
 }
+.creator {
+  margin-right: 1rem;
+  font-size: 18px;
+  text-align: right;
+  font-style: italic;
+}

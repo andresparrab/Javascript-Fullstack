@@ -3,13 +3,14 @@ import "./App.css";
 import Row from "./Row";
 import requests from "./requests";
 import Banner from "./Banner";
+import Nav from "./Nav";
 import "./Banner.css";
 
 function App() {
   return (
     <div className="App">
+      <Nav />
       <Banner />
-
       <Row
         title="NETFILX ORIGINALS"
         fetchUrl={requests.fetchNetflixOriginals}
@@ -22,7 +23,7 @@ function App() {
       <Row title="Horror Movies" fetchUrl={requests.fetchHorrorMovies} />
       <Row title="Romance Movies" fetchUrl={requests.fetchRomanceMovies} />
       <Row title="Documentaries" fetchUrl={requests.fetchDocumentaries} />
-      <h1>Project netflix-clon by Andres Parra</h1>
+      <h1 className="creator">Project netflix-clon by Andres Parra</h1>
     </div>
   );
 }

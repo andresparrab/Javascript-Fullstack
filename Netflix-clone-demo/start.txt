@@ -47,3 +47,7 @@
     this will make posters for the isLargeRow and get the backdrops images if not isLargeRow
 
 15. Create the banner
+16. Create the navBar
+17. Add trailer popups
+    install react-youtube
+18. Deploy App to firebase
