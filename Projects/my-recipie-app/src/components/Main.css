@@ -1,0 +1,8 @@
+.Main {
+  height: 93vh;
+  background: linear-gradient(to right, #e9e6e6, #e9e6e6 10%, #685df8 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

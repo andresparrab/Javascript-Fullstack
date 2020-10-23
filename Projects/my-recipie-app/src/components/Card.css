@@ -1,0 +1,31 @@
+.card-img-top-fluid {
+  padding: 10px;
+  height: 350px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.card:hover img {
+  transition: 0.5s ease;
+  opacity: 0.5;
+}
+
+.card:hover h3 {
+  transition: 0.3s ease;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /*Aligh left to right*/
+  align-items: center; /*Aligh top to bottom*/
+  height: 100%;
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  opacity: 0;
+}
