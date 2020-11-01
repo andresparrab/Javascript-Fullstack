@@ -1,0 +1,25 @@
+.navWrapper {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  background-color: hsl(180, 8%, 21%);
+  color: #a0a377;
+}
+
+.profile {
+  grid-column: 9/10;
+  align-self: center;
+}
+
+.logo {
+  width: 100px;
+}
+
+.signIn {
+  grid-column: 9/10;
+  align-self: center;
+}
+.logo,
+.signIn,
+.logout {
+  cursor: pointer;
+}

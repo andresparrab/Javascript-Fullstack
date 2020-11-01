@@ -1,9 +1,8 @@
 import React from "react";
-import "./App.css";
-import Header from "./components/Header";
-import Routing from "./components/Routing";
-
-import { UserProvider } from "./components/UserProvider"; // importerar global variabler
+import Routing from "./routes/Routing";
+import Header from "./components/NavigationBar/Header";
+import "./shared/global/global.css";
+import { UserProvider } from "./shared/global/provider/UserProvider"; // importerar global variabler
 
 function App() {
   return (

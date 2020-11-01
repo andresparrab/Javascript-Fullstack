@@ -1,0 +1,56 @@
+.profileWrapper {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  color: antiquewhite !important;
+}
+
+.userLogoImg {
+  width: 5vh;
+  border-radius: 100px;
+  grid-column: 1/10;
+}
+
+.Usertext {
+  color: antiquewhite !important;
+
+  grid-column: 3/10;
+  align-self: center;
+  font-weight: 800;
+}
+
+.logout {
+  grid-column: 3/10;
+  align-self: center;
+  color: rgb(0, 204, 255);
+  font-weight: 800;
+}
+
+.profileDropDown {
+  position: absolute;
+  background-color: hsl(180, 8%, 21%);
+  min-width: 100px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 7px 1px hsl(180, 8%, 21%);
+  opacity: 0;
+}
+
+.profileWrapper:hover .profileDropDown {
+  grid-column: 7/10;
+  display: block;
+  position: absolute;
+  margin-top: 50px;
+  opacity: 100;
+  transition: 0.5s;
+}
+
+.profileWrapper a {
+  display: block;
+}
+
+a:hover {
+  display: block;
+  color: rgb(0, 204, 255);
+  cursor: pointer;
+  transition: 0.5s;
+}

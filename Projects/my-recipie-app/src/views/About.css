@@ -1,0 +1,25 @@
+.container {
+  display: grid;
+  grid-template-columns: 1rf 1fr; /*It will make columns från end to end 1fr=1 fraction=100%*/
+  padding-top: 100px;
+}
+
+/* About Style */
+.two-column-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.profile-image-wrapper img {
+  padding-top: 30px;
+  height: 450px !important;
+  width: 100%;
+}
+
+.profile-content-wrapper {
+  padding: 30px;
+}
+
+.profile-content-wrapper h1 {
+  color: teal;
+}
