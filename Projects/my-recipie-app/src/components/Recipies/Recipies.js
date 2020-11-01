@@ -125,7 +125,7 @@ export default class Recipes extends Component {
           </div>
         ) : null}
         {this.state.displayRecipes && this.state.recipes ? (
-          <div className="container">
+          <div className="container2">
             {this.state.recipes.map((recipe, id) => {
               return <Recipe key={id} recipe={recipe} />;
             })}
