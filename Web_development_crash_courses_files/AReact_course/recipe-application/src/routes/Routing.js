@@ -17,6 +17,9 @@ export const Routing = (props) => {
   setauthenticatedUser2(localStorage.getItem("username"));
 
   console.log("The user is before check : ", authenticatedUser2);
+  
+  
+  
   const CheckIsUserAuthenticated = () => {
     return authenticatedUser2 === "andres"
       ? authenticatedUser2
@@ -32,6 +35,11 @@ export const Routing = (props) => {
     return !authenticatedUser2 ? SignInView : navigateView;
   };
 
+  
+  
+  
+  
+  
   useEffect(() => {
     CheckIsUserAuthenticated();
     // return () => {

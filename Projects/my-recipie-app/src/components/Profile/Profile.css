@@ -72,7 +72,11 @@ span:hover {
   padding-right: 10px;
 }
 .dropdown-menu {
-  min-width: 6rem;
+  min-width: 16rem;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: 10rem;
 }
 
 .dropdown-menu.show {

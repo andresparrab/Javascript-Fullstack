@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import "./Main.css";
-import LoginForm from "../LoginForm/LoginForm";
+// import LoginForm from "../LoginForm/LoginForm";
+import LoginForm from "../Loginform2/LoginForm2";
 import { UserContext } from "../../shared/global/provider/UserProvider";
 
 const Main = (props) => {
@@ -47,6 +48,7 @@ const Main = (props) => {
   return (
     <>
       <div className="Main">
+        {/* <LoginForm Login={Login} error={error} /> */}
         <LoginForm Login={Login} error={error} />
       </div>
     </>

@@ -10,10 +10,12 @@ import pizza from "../../shared/images/pizza.jpg";
 import soup from "../../shared/images/soup.jpg";
 import indian from "../../shared/images/indian.jpg";
 import Recipe from "./Recipe";
-import loading from "../../shared/images/generating.gif";
+// import loading from "../../shared/images/generating.gif";
+import Loadingg from "../../shared/global/loading/Loading";
 
 const APP_ID = "b6d2c104";
 const APP_KEY = "af098d00e18f7829678e35f61df3c0c9";
+//const newLoading = Loadingg
 
 export default class Recipes extends Component {
   constructor(props) {
@@ -137,7 +139,14 @@ export default class Recipes extends Component {
           </div>
         ) : this.state.displayRecipes ? (
           <div>
-            <img className="loading" src={loading} alt="loading.." />
+            {/* <div class="psoload">
+              <div class="straight"></div>
+              <div class="curve"></div>
+              <div class="center"></div>
+              <div class="inner"></div>{" "}
+            </div> */}
+            {/* <img className="loading" src={Loading} alt="loading.." /> */}
+            {Loadingg()}
           </div>
         ) : null}
       </div>
