@@ -21,7 +21,10 @@ const Routing = (props) => {
 
   useEffect(() => {
     CheckAuth();
-    console.log("This is in the routing inside UseEFFECT ", CheckAuth());
+    console.log(
+      "This is in the routing inside UseEFFECT ",
+      localStorage.getItem("auth")
+    );
     // return () => {
     //   cleanup;
     // };

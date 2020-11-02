@@ -21,16 +21,16 @@ export const Loginform2 = ({ Login, error }) => {
     name: "",
     email: "",
     password: "",
-    auth: true,
+    auth: false,
   });
 
-  //   $("#login-button").click(function (event) {
-  //     event.preventDefault();
-  //     Login(details);
+  // $("#login-button").click(function (event) {
+  //   event.preventDefault();
+  //   Login(details);
 
-  //     $("form").fadeOut(500);
-  //     $(".wrapper").addClass("form-success");
-  //   });
+  //   $("form").fadeOut(500);
+  //   $(".wrapper").addClass("form-success");
+  // });
 
   const submitHandler = (e) => {
     e.preventDefault(); // Prevents the Default behaviour of the event

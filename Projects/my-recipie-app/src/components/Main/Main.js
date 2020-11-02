@@ -12,14 +12,13 @@ const Main = (props) => {
 
   const [isAuthenticated, setisAuthenticated] = useContext(UserContext);
   const [error, setError] = useState("");
-  // setisAuthenticated((details) => ({ ...details, auth: true }));
 
-  // const updateAuth = () =>
-  //   setisAuthenticated((isAuthenticated) => ({
-  //     ...isAuthenticated,
-  //     auth: true,
-  //     name: "mongo",
-  //   }));
+  const updateAuth = () =>
+    setisAuthenticated((isAuthenticated) => ({
+      ...isAuthenticated,
+      auth: true,
+      name: "mongo",
+    }));
 
   const Login = (details) => {
     //Login function
@@ -35,6 +34,7 @@ const Main = (props) => {
         email: details.email,
         password: details.password,
       }));
+      updateAuth();
       console.log("This is un login func DETAILS: ----->", isAuthenticated);
       localStorage.setItem("user", details.name);
       localStorage.setItem("email", details.email);
@@ -48,7 +48,6 @@ const Main = (props) => {
   return (
     <>
       <div className="Main">
-        {/* <LoginForm Login={Login} error={error} /> */}
         <LoginForm Login={Login} error={error} />
       </div>
     </>
