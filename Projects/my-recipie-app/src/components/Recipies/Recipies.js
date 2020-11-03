@@ -53,7 +53,7 @@ export default class Recipes extends Component {
   formatRecipe = (recipes) => {
     let tempRecipes = recipes.map((recipe) => {
       let image = recipe.recipe.image;
-      let name = recipe.recipe.source;
+      let name = recipe.recipe.label;
       let ingredients = recipe.recipe.ingredients
         .map((ingredient) => ingredient.text)
         .join(", ");

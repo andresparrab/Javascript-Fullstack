@@ -11,7 +11,7 @@ const About = () => {
           </div>
 
           <div class="profile-content-wrapper">
-            <h1>Hi, thanks for visiting!</h1>
+            <h1 className="thanks">Hi, thanks for visiting!</h1>
             <p>
               If you wish to contact the deveolper of this site. Please send an
               e-mail to : andres.parrab@gmail.com
