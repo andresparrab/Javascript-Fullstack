@@ -1,0 +1,14 @@
+{
+  "name": "basic_nodejs",
+  "version": "1.0.0",
+  "description": "Node_crash_course",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andres Parra",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^8.3.1"
+  }
+}
