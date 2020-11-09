@@ -1,21 +1,36 @@
-// This is the traditional way to write functions
+{
+  function pow(x, y) {
+    let total = 1;
+    for (let i = 0; i < y; i++) {
+      total *= x;
+    }
+    return total;
+  }
 
-function addNumns(num1 = 1, num2 = 1) {
-  return num1 + num2;
+  let coolFunction = [pow]; // Adding function to an array
+
+  let mathFunction = {
+    // Adding a function to an object AS a props even called methods,, a function inside a function
+    power: pow,
+  };
+
+  console.log(mathFunction.power(2, 3));
 }
 
-console.log(addNumns(4, 5));
+//Adding a prop to a function
+pow.description = "This will raise to the power : ";
 
-// This is a more modern way to do it and use it as a const
+console.log(pow.description);
 
-const addNumns2 = (num1 = 1, num2 = 1) => console.log(num1 + num2);
+// calback function, is a function that takes a function as parameter, call the function inside the parent funtion  then return something, in this case 2^5= 32
+function callbackExample(callback) {
+  return callback(2, 5);
+}
+console.log(callbackExample(pow));
 
-addNumns2(4, 6);
+// A function that return a function
+function returnAFunction() {
+  return pow;
+}
 
-//can use it with the todos array of object to loop every todo, and return the console for every todo item.
-// is the same as this:
-//forEACH
-//todos.forEach(function (todo) {
-//    console.log(todo.id);
-//  });
-todos.forEach((todo) => console.log(todo));
+console.log(returnAFunction()(2, 5));
