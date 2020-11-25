@@ -1,15 +1,17 @@
 
 
-
-const express = require("express");
+const express = require("express")
+//const express = require("express");
 // const bodyparser = require('body-parser')
 const cors = require("cors");
 const mongoose = require("mongoose"); // this is what we need to connect to our mongoDB
 
 require("dotenv").config();
 
+
 const app = express();
 const port = process.env.PORT || 5000;
+
 
 app.use(cors());
 app.use(express.json()); // OBS!! dont need body-parser, is alreade integrated in express. instead for import bodyparser and app.use(bpdy-parser.json())

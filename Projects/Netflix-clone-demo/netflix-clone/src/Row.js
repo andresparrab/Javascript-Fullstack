@@ -33,12 +33,17 @@ function Row({ title, fetchUrl, isLargeRow }) {
   };
 
   const handleClick = (movie) => {
-    if (trailerUrl) {
+    console.log("this is the selected movie--->>>>", movie)
+    const searchMovie = `${movie?.name} --year ${movie.first_air_date.substring(0,4)}`;
+    console.log("this is the selected searchmovie--->>>>", searchMovie)
+    if (trailerUrl) {  // is the video trailer is open then close it
       setTrailerUrl("");
     } else {
-      movieTrailer(movie?.name || "")
+      movieTrailer(movie?.title || movie?.name || movie?.original_name || "")
         .then((url) => {
+          // https://www.youtube.com/watch?v=2Q8VIPJAox8
           const urlParams = new URLSearchParams(new URL(url).search);
+          console.log("this is the URL VARIABLE--->>>>", url)
           setTrailerUrl(urlParams.get("v"));
         })
         .catch((error) => console.log(error));

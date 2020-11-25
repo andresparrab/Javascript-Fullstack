@@ -1,6 +1,8 @@
 const router = require("express").Router(); // this is  a new route we create for ./routes/users
 let User = require("../models/user.model");
 
+
+
 router.route("/").get((req, res) => {
   User.find()                                 // this is a mongoose method that will get a list of all the Users from the mongoDB atlasDB
     .then((users) =>{ 
