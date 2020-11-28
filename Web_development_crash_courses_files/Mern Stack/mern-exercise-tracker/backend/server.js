@@ -1,6 +1,4 @@
-
-
-const express = require("express")
+const express = require("express");
 //const express = require("express");
 // const bodyparser = require('body-parser')
 const cors = require("cors");
@@ -8,20 +6,22 @@ const mongoose = require("mongoose"); // this is what we need to connect to our 
 
 require("dotenv").config();
 
-
 const app = express();
 const port = process.env.PORT || 5000;
-
 
 app.use(cors());
 app.use(express.json()); // OBS!! dont need body-parser, is alreade integrated in express. instead for import bodyparser and app.use(bpdy-parser.json())
 
-const uri = process.env.ATLAS_URI; // this  get the .nev file and read the ATLAS_ URI variable
+const uri = process.env.ATLAS_URI || " mongodb://localhost:5000"; // this  get the .env file and read the ATLAS_ URI variable
 mongoose.connect(uri, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
   useCreateIndex: true,
 });
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("frontend/build"));
+}
 
 const connection = mongoose.connection;
 connection.once("open", () => {
@@ -32,8 +32,9 @@ const exercisesRouter = require("./routes/exercises");
 const usersRouter = require("./routes/users");
 
 app.use("/exercises", exercisesRouter);
-app.use("/users", usersRouter);   // this is for when we type /users in the browser it will load ./routes/users
+app.use("/users", usersRouter); // this is for when we type /users in the browser it will load ./routes/users
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
+module.exports = app;

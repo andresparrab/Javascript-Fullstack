@@ -1,0 +1,31 @@
+ Add this to the package.json
+   
+    "install-frontend":"cd mern-exercise-tracker && npm install",
+    "build2": "cd mern-exercise-tracker && npm run buld",
+    "heroku-postbuild":" npm run install-frontend && npm run build2",
+
+In server.js add this :
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("../build"));
+}
+
+
+Remove .git folder i FRONTEND mappen if any
+
+
+login to heroku with 
+heroku login -i
+create an heroku app with 
+heroku create name-of-app (mine is  mern-exercise-tracker)
+
+heroku git:remote -a mern-exercise-tracker
+
+git status
+
+git commit -am "verions 1.0" 
+git push heroku master
+
+
+go to heroku then your app then settings and add Config Vars 
+ATLAS_URI      mongodb+srv://dbUser:dbUserPassword@cluster0.vxgyt.mongodb.net/<dbname>?retryWrites=true&w=majority
+NODE_ENV       production

@@ -2,7 +2,6 @@
   "name": "mern-exercise-tracker",
   "version": "0.1.0",
   "private": true,
-  
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -22,9 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "install-frontend":"cd backend && npm install",
-    "build2": "cd mern-exercise-tracker && npm run buld",
-    "heroku-postbuild":" npm run install-frontend && npm run build2",
+  
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

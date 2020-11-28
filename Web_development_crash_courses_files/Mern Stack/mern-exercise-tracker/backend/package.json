@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "mocha 'test/**'",
+    "start": "node server.js",
+    "install-frontend": "cd frontend && npm install",
+    "build": "cd frontend && npm run build",
+    "heroku-postbuild": " npm run install-frontend && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +19,14 @@
     "express": "^4.17.1",
     "mongoose": "^5.10.11"
   },
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/chai-http": "^4.2.0",
+    "@types/mocha": "^8.0.4",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint-config-react-app": "^6.0.0",
+    "mocha": "^8.2.1"
+  }
 }

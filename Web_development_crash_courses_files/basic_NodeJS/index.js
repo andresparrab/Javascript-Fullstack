@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("fs");
 
 const server = new http.createServer((req, res) => {
-  // Build fila path
+  // Build file path
   let filePath = path.join(
     __dirname,
     "public",
