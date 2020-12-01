@@ -8,15 +8,16 @@ import CreateExercise from "./components/createExercise.component";
 import CreateUser from "./components/createUser.component";
 
 function App() {
+  const mongo = "hamster";
   return (
     <Router>
-      <div className="container">
+      <div className='container'>
         <Navbar />
         <br />
-        <Route path="/" exact component={ExercisesListll} />
-        <Route path="/edit/:id" exact component={EditExercise} />
-        <Route path="/create" exact component={CreateExercise} />
-        <Route path="/user" exact component={CreateUser} />
+        <Route path='/' exact component={ExercisesListll} />
+        <Route path='/edit/:id' exact component={EditExercise} />
+        <Route path='/create' exact component={CreateExercise} />
+        <Route path='/user' exact component={CreateUser} />
       </div>
     </Router>
   );

@@ -1,8 +1,17 @@
- Add this to the package.json
+make sure your frontend is INSIDE BACKEND folder 
+
+Add this to the package.json
    
     "install-frontend":"cd mern-exercise-tracker && npm install",
     "build2": "cd mern-exercise-tracker && npm run buld",
     "heroku-postbuild":" npm run install-frontend && npm run build2",
+    "start": "node src/Server.js",                                       ///    change "start": "nodemon", to the line "start": "node /src/Server.js", or you will get error nodemon not found
+
+
+
+And add :
+"type": "module", to package.json or the program will not sun in server because it translate all ts to js och need to have "type": "module",
+
 
 In server.js add this :
 if (process.env.NODE_ENV === "production") {
@@ -12,7 +21,7 @@ if (process.env.NODE_ENV === "production") {
 
 Remove .git folder i FRONTEND mappen if any
 
-
+git init
 login to heroku with 
 heroku login -i
 create an heroku app with 
@@ -21,7 +30,7 @@ heroku create name-of-app (mine is  mern-exercise-tracker)
 heroku git:remote -a mern-exercise-tracker
 
 git status
-
+git add .
 git commit -am "verions 1.0" 
 git push heroku master
 
