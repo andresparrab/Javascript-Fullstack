@@ -45,6 +45,7 @@ const CreateExercise = (props) => {
     axios
       .get("/users")
       .then((res) => {
+        console.log("This are the users--------------> ", res.data);
         if (res.data.length > 0) {
           setUsers(res.data.map((user) => user.username));
           console.log(`this is the Iteration from get userfrom db ${res.data}`);
